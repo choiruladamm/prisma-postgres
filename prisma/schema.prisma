@@ -28,9 +28,16 @@ model Car {
 }
 
 model CarBlog {
-  id        String   @id @default(cuid())
-  content   String
-  createdAt DateTime @default(now())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
+  id         String             @id @default(cuid())
+  content    String
+  createdAt  DateTime           @default(now())
+  userId     String
+  user       User               @relation(fields: [userId], references: [id])
+  categories CategoryCarBlogs[]
+}
+
+model CategoryCarBlogs {
+  id       String    @id @default(cuid())
+  name     String
+  carBlogs CarBlog[]
 }
