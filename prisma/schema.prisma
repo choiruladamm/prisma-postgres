@@ -11,10 +11,11 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(cuid())
-  fname String
-  lname String
-  car   Car?
+  id       String    @id @default(cuid())
+  fname    String
+  lname    String
+  car      Car?
+  carBlogs CarBlog[]
 }
 
 model Car {
@@ -24,4 +25,12 @@ model Car {
   name   String
   userId String  @unique
   user   User    @relation(fields: [userId], references: [id])
+}
+
+model CarBlog {
+  id        String   @id @default(cuid())
+  content   String
+  createdAt DateTime @default(now())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
