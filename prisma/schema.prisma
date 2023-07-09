@@ -14,6 +14,7 @@ model User {
   id    String @id @default(cuid())
   fname String
   lname String
+  car   Car?
 }
 
 model Car {
@@ -21,4 +22,6 @@ model Car {
   color  String
   bought Boolean @default(false)
   name   String
+  userId String  @unique
+  user   User    @relation(fields: [userId], references: [id])
 }
