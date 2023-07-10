@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start:dev": "ts-node-dev --respawn --transpile-only --exit-child src/server.ts",
     "build": "tsc"
   },
   "keywords": [],
