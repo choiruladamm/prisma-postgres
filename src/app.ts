@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { userRoutes } from "./routes";
 
 class App {
   public server;
@@ -14,7 +15,7 @@ class App {
   }
 
   routes() {
-    this.server.use();
+    this.server.use("/api/users", userRoutes);
   }
 }
 
