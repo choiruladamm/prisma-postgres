@@ -15,6 +15,11 @@ To run this project, you will need to add the following environment variables to
 ```bash
 DATABASE_URL="postgresql://postgres:admin@localhost:5432/prisma_crud_ts?schema=public"
 ```
+Migrate database
+
+```bash
+npx prisma migrate dev
+```
 
 ## List Endpoint
 - get all user: http://localhost:3333/api/users
