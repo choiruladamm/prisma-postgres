@@ -12,9 +12,9 @@ Build Databases Using Prisma.IO | Typescript | Node.js
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DATABASE_URL`
-
-example: postgresql://postgres:admin@localhost:5432/prisma_crud?schema=public
+```bash
+DATABASE_URL="postgresql://postgres:admin@localhost:5432/prisma_crud_ts?schema=public"
+```
 
 ## List Endpoint
 - get all user: http://localhost:3333/api/users
