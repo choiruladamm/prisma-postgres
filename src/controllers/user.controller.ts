@@ -28,13 +28,21 @@ export const userController = {
   // find one user
   async findUniqueUser(req: Request, res: Response) {
     const { id } = req.params;
-    const user = await prisma.user.findUnique({
-      where: {
-        id: String(id),
-      },
-    });
+    try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: String(id),
+        },
+      });
 
-    return res.json({ user: user });
+      if (!user) {
+        // User not found, throw custom error
+        throw new Error("User not found");
+      }
+      return res.json({ user: user });
+    } catch (error: any) {
+      return res.status(404).json({ error: error.message });
+    }
   },
 
   // delete user
