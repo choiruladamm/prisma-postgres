@@ -1,4 +1,4 @@
-# SIMPLE CRUD REST API
+# CRUD REST API
 Build Databases Using Prisma.IO | Typescript | Node.js 
 
 ## On This Repo
